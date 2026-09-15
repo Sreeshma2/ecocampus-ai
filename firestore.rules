@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // User profile and personal preferences
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      // Allow read for demo/public profile in hackathon mode
+      allow read: if true;
+    }
+    
+    // Custom simulated alerts & incident actions created during demo
+    match /simulatedAlerts/{alertId} {
+      allow read, write: if true;
+    }
+
+    // AI recommendations and notes
+    match /savedRecommendations/{recId} {
+      allow read, write: if true;
+    }
+
+    // Campus audits and action items
+    match /campusActions/{actionId} {
+      allow read, write: if true;
+    }
+  }
+}

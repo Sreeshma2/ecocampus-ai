@@ -1,0 +1,6 @@
+{
+  "name": "EcoCampus AI",
+  "description": "Smart campus energy and water conservation intelligence platform for tracking consumption, detecting wastage anomalies, and providing AI sustainability recommendations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
